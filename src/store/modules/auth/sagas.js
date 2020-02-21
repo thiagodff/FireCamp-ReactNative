@@ -42,7 +42,6 @@ export function* signUp({ payload }) {
       name,
       email,
       password,
-      instructor: true,
     });
 
     // history.push('/');
