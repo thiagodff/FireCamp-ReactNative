@@ -5,13 +5,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 // import { Container } from './styles';
 
-export default function Dashboard() {
+export default function Profile() {
   return <View />;
 }
 
-Dashboard.navigationOptions = {
-  tabBarLabel: 'Atividades',
+Profile.navigationOptions = {
+  tabBarLabel: 'Meu perfil',
   tabBarIcon: ({ tintColor }) => (
-    <Icon name="add" size={20} color={tintColor} />
+    <Icon name="person" size={20} color={tintColor} />
   ),
 };

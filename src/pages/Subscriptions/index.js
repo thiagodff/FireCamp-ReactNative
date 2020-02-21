@@ -5,13 +5,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 
 // import { Container } from './styles';
 
-export default function Dashboard() {
+export default function Subscriptions() {
   return <View />;
 }
 
-Dashboard.navigationOptions = {
-  tabBarLabel: 'Atividades',
+Subscriptions.navigationOptions = {
+  tabBarLabel: 'Inscrições',
   tabBarIcon: ({ tintColor }) => (
-    <Icon name="add" size={20} color={tintColor} />
+    <Icon name="event-note" size={20} color={tintColor} />
   ),
 };
