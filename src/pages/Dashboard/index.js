@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from 'react';
-import { format, subDays, addDays, parseISO } from 'date-fns';
+import { format, subDays, addDays } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
