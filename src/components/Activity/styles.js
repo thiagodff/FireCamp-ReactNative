@@ -6,6 +6,8 @@ export const Container = styled.View`
   border-radius: 4px;
   display: flex;
   margin-bottom: 15px;
+
+  opacity: ${props => (props.past ? 0.6 : 1)};
 `;
 
 export const Banner = styled.Image`
@@ -21,7 +23,7 @@ export const Info = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   color: #333;
   margin-bottom: 5px;
@@ -35,7 +37,7 @@ export const Date = styled.View`
 `;
 
 export const DateText = styled.Text`
-  font-size: 16px;
+  font-size: 15px;
   margin-left: 5px;
   color: #444;
 `;
@@ -48,7 +50,7 @@ export const Locale = styled.View`
 `;
 
 export const LocaleText = styled.Text`
-  font-size: 16px;
+  font-size: 15px;
   margin-left: 5px;
   color: #444;
 `;
@@ -61,7 +63,7 @@ export const Instructor = styled.View`
 `;
 
 export const InstructorText = styled.Text`
-  font-size: 16px;
+  font-size: 15px;
   margin-left: 5px;
   color: #444;
 `;
@@ -79,5 +81,5 @@ export const SubscribreButton = styled(RectButton)`
 export const TextButton = styled.Text`
   color: #fff;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 17px;
 `;

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useMemo } from 'react';
+import { format, parseISO } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import {
@@ -16,32 +18,37 @@ import {
   SubscribreButton,
 } from './styles';
 
-export default function Activity() {
+export default function Activity({ data, onSubscribe }) {
+  const dateFormatted = useMemo(() => {
+    return format(parseISO(data.date), "d 'de' MMMM', às' HH:mm'h'", {
+      locale: pt,
+    });
+  }, [data.date]);
+
   return (
-    <Container>
+    <Container past={data.past}>
       <Banner
         source={{
-          uri:
-            'http://192.168.0.19:3333/files/e765332c08da43d1831953e0e93c2827.jpg',
+          uri: data.banner.url.replace('localhost', '192.168.0.19'),
         }}
       />
 
       <Info>
-        <Title>Canoagem</Title>
+        <Title>{data.title}</Title>
         <Date>
-          <Icon name="event" size={16} color="#444" />
-          <DateText>26 de Junho, às 14h</DateText>
+          <Icon name="event" size={15} color="#444" />
+          <DateText>{dateFormatted}</DateText>
         </Date>
         <Locale>
-          <Icon name="location-on" size={16} color="#444" />
-          <LocaleText>Lagoa segura</LocaleText>
+          <Icon name="location-on" size={15} color="#444" />
+          <LocaleText>{data.location}</LocaleText>
         </Locale>
         <Instructor>
-          <Icon name="person-outline" size={16} color="#444" />
-          <InstructorText>Bear Grylls</InstructorText>
+          <Icon name="person-outline" size={15} color="#444" />
+          <InstructorText>{data.instructor.name}</InstructorText>
         </Instructor>
 
-        <SubscribreButton>
+        <SubscribreButton onPress={onSubscribe} enabled={!data.past}>
           <TextButton>Realizar Inscrição</TextButton>
         </SubscribreButton>
       </Info>

@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
+import { format, subDays, addDays, parseISO } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import { Alert } from 'react-native';
+import api from '~/services/api';
 
 import Activity from '~/components/Activity';
 
@@ -18,9 +23,51 @@ import {
 
 import logo2 from '~/assets/logo2.png';
 
-const data = [1];
-
 export default function Dashboard() {
+  const [activities, setActivities] = useState([]);
+  const [updateActivity, setUpdateActivity] = useState(false);
+  const [date, setDate] = useState(new Date());
+
+  const dateFormatted = useMemo(
+    () => format(date, "d 'de' MMMM", { locale: pt }),
+    [date]
+  );
+
+  useEffect(() => {
+    async function loadActivities() {
+      const response = await api.get('activities', {
+        params: { date },
+      });
+
+      setActivities(response.data);
+    }
+
+    loadActivities();
+  }, [date, updateActivity]);
+
+  function handlePrevDay() {
+    setDate(subDays(date, 1));
+  }
+
+  function handleNextDay() {
+    setDate(addDays(date, 1));
+  }
+
+  async function handleSubscribe(id) {
+    try {
+      await api.post('subscriptions', {
+        activity_id: id,
+      });
+
+      setUpdateActivity(!updateActivity);
+    } catch (err) {
+      Alert.alert(
+        'Erro ao cadastrar',
+        'Ocorreu um erro ao se inscrever na atividade'
+      );
+    }
+  }
+
   return (
     <Container>
       <Header>
@@ -28,20 +75,25 @@ export default function Dashboard() {
       </Header>
 
       <SelectDate>
-        <PreviousDate>
+        <PreviousDate onPress={handlePrevDay}>
           <Icon name="navigate-before" size={30} color="#444" />
         </PreviousDate>
-        <DateFormatted>26 de Junho</DateFormatted>
-        <NextDate>
+        <DateFormatted>{dateFormatted}</DateFormatted>
+        <NextDate onPress={handleNextDay}>
           <Icon name="navigate-next" size={30} color="#444" />
         </NextDate>
       </SelectDate>
 
-      {data.length > 0 ? (
+      {activities.length > 0 ? (
         <List
-          data={data}
-          keyExtractor={item => String(item)}
-          renderItem={({ item }) => <Activity data={item} />}
+          data={activities}
+          keyExtractor={item => String(item.id)}
+          renderItem={({ item }) => (
+            <Activity
+              onSubscribe={() => handleSubscribe(item.id)}
+              data={item}
+            />
+          )}
         />
       ) : (
         <WrapNoActivity>

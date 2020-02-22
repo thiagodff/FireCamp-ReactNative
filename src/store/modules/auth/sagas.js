@@ -42,6 +42,7 @@ export function* signUp({ payload }) {
       name,
       email,
       password,
+      enrollment: new Date(),
     });
 
     // history.push('/');
