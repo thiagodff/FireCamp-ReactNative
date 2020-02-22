@@ -23,12 +23,14 @@ export default (isSigned = false) =>
             Profile,
           },
           {
+            resetOnBlur: true,
             tabBarOptions: {
               keyboardHidesTabBar: true,
               activeTintColor: '#4C8056',
               inactiveTintColor: '#999',
               style: {
                 backgroundColor: '#fff',
+                borderTopColor: '#ddd',
               },
             },
           }
