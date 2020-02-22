@@ -18,7 +18,7 @@ import {
   SubscribreButton,
 } from './styles';
 
-export default function Activity({ data, onSubscribe }) {
+export default function Activity({ data, onUnsubscribe }) {
   const dateFormatted = useMemo(() => {
     return format(parseISO(data.date), "d 'de' MMMM', às' HH:mm'h'", {
       locale: pt,
@@ -48,8 +48,8 @@ export default function Activity({ data, onSubscribe }) {
           <InstructorText>{data.instructor.name}</InstructorText>
         </Instructor>
 
-        <SubscribreButton onPress={onSubscribe} enabled={!data.past}>
-          <TextButton>Realizar inscrição</TextButton>
+        <SubscribreButton onPress={onUnsubscribe} enabled={!data.past}>
+          <TextButton>Cancelar inscrição</TextButton>
         </SubscribreButton>
       </Info>
     </Container>

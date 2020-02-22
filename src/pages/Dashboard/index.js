@@ -99,7 +99,7 @@ export default function Dashboard() {
         <WrapNoActivity>
           <Icon name="event-busy" size={60} color="#444" />
           <TextNoActivity>
-            Parece que não temos atividades para esse dia
+            Parece que não temos mais atividades para esse dia
           </TextNoActivity>
         </WrapNoActivity>
       )}
