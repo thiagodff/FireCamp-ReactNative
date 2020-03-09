@@ -16,8 +16,7 @@ FireCamp
 
 <div align="center">
   <img src=".github/appAuth.gif" alt="firecampAuthGif" height="425">
-  <div width="60" height="425">
-  <img src=".github/appActivity.gif" alt="firecampActivityGif" height="425">
+  <img src=".github/appActivity.gif" alt="firecampActivityGif" height="425" style="margin-left: 60px;">
 </div>
 
 <hr />
