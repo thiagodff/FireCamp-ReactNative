@@ -14,8 +14,9 @@ FireCamp
   </a>
 </p>
 
-<div style="width: 100%; display: flex; justify-content: space-around;">
+<div align="center">
   <img src=".github/appAuth.gif" alt="firecampAuthGif" height="425">
+  <div width="60" height="425">
   <img src=".github/appActivity.gif" alt="firecampActivityGif" height="425">
 </div>
 
