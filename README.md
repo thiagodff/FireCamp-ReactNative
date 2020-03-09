@@ -6,7 +6,7 @@
 FireCamp
 </h1>
 
-<p align="center">A Software as a Service for campers to subscribe for activities</p>
+<p align="center">APP for campers to subscribe for activities</p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
@@ -14,7 +14,7 @@ FireCamp
   </a>
 </p>
 
-<div>
+<div style="display: flex; justify-content: space-around;">
   <img src=".github/appAuth.gif" alt="firecampAuthGif" height="425">
   <img src=".github/appActivity.gif" alt="firecampActivityGif" height="425">
 </div>
@@ -34,6 +34,17 @@ To see the **instructor interface**, click here to take a look in the web aplica
 This app features all the latest tools and practices development!
 
 - [React Native](https://reactnative.dev/)
+- [React Navigation](https://reactnavigation.org/)
+- [Redux](https://redux.js.org/)
+- [Redux-Saga](https://redux-saga.js.org/)
+- [Redux-Persist](https://github.com/rt2zz/redux-persist)
+- [Immer](https://immerjs.github.io/immer/docs/introduction)
+- [Reactotron](https://github.com/infinitered/reactotron)
+- [Prop-Types](https://github.com/facebook/prop-types)
+- [Styled-Components](https://styled-components.com/)
+- [Axios](https://github.com/axios/axios)
+- [Date-fns](https://date-fns.org/)
+- [ESLint](https://eslint.org/)
 
 ## Getting started
 
