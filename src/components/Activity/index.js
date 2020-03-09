@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { IP_ADDRESS } from 'react-native-dotenv';
 
 import {
   Container,
@@ -29,7 +30,7 @@ export default function Activity({ data, onSubscribe }) {
     <Container past={data.past}>
       <Banner
         source={{
-          uri: data.banner.url.replace('localhost', '192.168.0.19'),
+          uri: data.banner.url.replace('localhost', IP_ADDRESS),
         }}
       />
 
