@@ -6,7 +6,7 @@
 FireCamp
 </h1>
 
-<p align="center">APP for campers to subscribe for activities</p>
+<p align="center">Mobile App for campers to subscribe for activities</p>
 
 <p align="center">
   <a href="https://opensource.org/licenses/MIT">
@@ -14,9 +14,9 @@ FireCamp
   </a>
 </p>
 
-<div style="display: flex; justify-content: space-around;">
+<div align="center">
   <img src=".github/appAuth.gif" alt="firecampAuthGif" height="425">
-  <img src=".github/appActivity.gif" alt="firecampActivityGif" height="425">
+  <img src=".github/appActivity.gif" alt="firecampActivityGif" height="425" style="margin-left: 60px;">
 </div>
 
 <hr />
